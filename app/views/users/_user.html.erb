@@ -1,0 +1,7 @@
+<div>
+  <h3><%= user.name %></h3>
+
+  <%= simple_format user.bio %>
+
+  <%= link_to "Download", user_download_path(user, format: :pdf) %>
+</div>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      <%= Rails.application.assets.find_asset('pdf').to_s %>
+    </style>
+
+    <meta name="pdfkit-margin_top" content=".25in"/>
+    <meta name="pdfkit-margin_right" content=".15in"/>
+    <meta name="pdfkit-margin_bottom" content=".25in"/>
+    <meta name="pdfkit-margin_left" content=".15in"/>
+  </head>
+
+  <body id="pdf-layout">
+    <%= yield %>
+  </body>
+</html>
