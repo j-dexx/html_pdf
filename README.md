@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Has seeds
 
-Things you may want to cover:
+Add PDFKit to Gemfile
 
-* Ruby version
+If Rails version < 5
 
-* System dependencies
+Add
 
-* Configuration
+gem "render_anywhere", require: false
 
-* Database creation
+Then in download.rb
 
-* Database initialization
+```ruby
+require "render_anywhere"
 
-* How to run the test suite
+class Download
+  include RenderAnywhere
 
-* Services (job queues, cache servers, search engines, etc.)
+  private
 
-* Deployment instructions
-
-* ...
+  def as_html
+    render render_attributes
+  end
+end
+```
